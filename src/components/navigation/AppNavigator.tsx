@@ -12,11 +12,11 @@ const Tab = createBottomTabNavigator();
 const AppNavigator = () => {
     return (
         <NavigationContainer>
-            <Tab.Navigator screenOptions={{ tabBarActiveTintColor: 'yellow', tabBarInactiveTintColor: 'black', headerShown: false }}>
+            <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#F2C94C', tabBarInactiveTintColor: 'black', headerShown: false }}>
                 <Tab.Screen name="Home" component={HomeScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="home" color={color} size={size} />)}}></Tab.Screen>
-                <Tab.Screen name="Search" component={SearchScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="search" color={color} size={size} />)}}></Tab.Screen>
-                <Tab.Screen name="WishList" component={WishListScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="heart" color={color} size={size} />)}}></Tab.Screen>
-                <Tab.Screen name="Profile" component={ProfileScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="person" color={color} size={size} />)}}></Tab.Screen>
+                <Tab.Screen name="Search" component={SearchScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="search-outline" color={color} size={size} />)}}></Tab.Screen>
+                <Tab.Screen name="WishList" component={WishListScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="bookmark-outline" color={color} size={size} />)}}></Tab.Screen>
+                <Tab.Screen name="Profile" component={ProfileScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="person-outline" color={color} size={size} />)}}></Tab.Screen>
             </Tab.Navigator>
         </NavigationContainer>
     )
