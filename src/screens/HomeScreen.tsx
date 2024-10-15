@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, Image, StatusBar, StyleSheet, Text, View } from "react-native";
 import { getPopularMovies } from "../api/TmdbApi";
 import MovieCard from "../components/MovieCard";
 
