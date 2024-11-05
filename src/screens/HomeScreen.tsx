@@ -35,7 +35,7 @@ const HomeScreen = () => {
     const isDark = theme == 'dark';
     
     return (
-        <ScrollView style={isDark ? {backgroundColor: '#333333'} : {backgroundColor: 'white'}}>
+        <ScrollView style={isDark ? {backgroundColor: 'black'} : {backgroundColor: 'white'}}>
             <StatusBar translucent={true} backgroundColor='transparent' />
             <Image source={image} style={styles.imageStyle} />
             <View style={styles.buttonContainer}>
@@ -51,7 +51,7 @@ const HomeScreen = () => {
             </View>
 
             <LinearGradient 
-                colors={isDark ? ['#333333', 'transparent'] :  ['#FFFFFF', 'transparent']}
+                colors={isDark ? ['black', 'transparent'] :  ['#FFFFFF', 'transparent']}
                 style={styles.gradiantContainer}
                 start={{ x: 0.5, y: 1 }}
                 end={{ x: 0.5, y: 0 }}

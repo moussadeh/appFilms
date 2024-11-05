@@ -16,7 +16,7 @@ const AppNavigator = () => {
 
     return (
         <NavigationContainer>
-            <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#F2C94C', tabBarInactiveTintColor: isDark ? 'white' : '#333333', headerShown: false, tabBarStyle: {backgroundColor: isDark ? '#333333' : 'white'} }}>
+            <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#F2C94C', tabBarInactiveTintColor: isDark ? 'white' : '#333333', headerShown: false, tabBarStyle: {backgroundColor: isDark ? 'black' : 'white'} }}>
                 <Tab.Screen name="Home" component={HomeScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="home" color={color} size={size} />)}}></Tab.Screen>
                 <Tab.Screen name="Search" component={SearchScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="search-outline" color={color} size={size} />)}}></Tab.Screen>
                 <Tab.Screen name="WishList" component={WishListScreen} options={{tabBarIcon: ({color, size}) => (<Icon name="bookmark-outline" color={color} size={size} />)}}></Tab.Screen>
