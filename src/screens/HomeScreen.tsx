@@ -3,6 +3,8 @@ import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, View } from "
 import { getBestMovies, getPopularMovies, getMarvelMovies } from "../api/TmdbApi";
 import MovieCard from "../components/MovieCard";
 import Bouton from "../components/Bouton";
+import LinearGradient from "react-native-linear-gradient";
+import Elilipse from "../components/Elilipse";
 
 const image = require('../assets/images/unsplash_UC0HZdUitWY.png');
 
@@ -33,6 +35,20 @@ const HomeScreen = () => {
                 <Bouton text="WishList" bgColor="#333333" />
                 <Bouton text="Details" bgColor="#F2C94C" />
             </View>
+            <View style={styles.ellipseContainer}>
+                <Elilipse />
+                <Elilipse />
+                <Elilipse />
+                <Elilipse />
+                <Elilipse />
+            </View>
+
+            <LinearGradient 
+                colors={['#FFFFFF', 'transparent']}
+                style={styles.gradiantContainer}
+                start={{ x: 0.5, y: 1 }}
+                end={{ x: 0.5, y: 0 }}
+            />
             
             <View style={styles.titreContainer}>
                 <Text style={styles.titre}>Popular Movies</Text>
@@ -88,23 +104,37 @@ const styles = StyleSheet.create({
     titre: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: 'black'
+        color: 'black',
+        paddingHorizontal: 10
     },
     titreContainer: {
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         alignItems: 'center',
         width: '100%',
         marginTop: 15,
         marginBottom: 10
     },
     seeMore: {
-        color: '#F2C94C'
+        color: '#F2C94C',
+        paddingHorizontal: 10
     },
     buttonContainer: {
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
+    },
+    gradiantContainer: {
+        width: '100%',
+        height: 130,
+        position: 'absolute',
+        top: 300
+    },
+    ellipseContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        flexDirection: 'row',
+        marginTop: 20
     }
 })
 
