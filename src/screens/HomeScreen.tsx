@@ -5,8 +5,11 @@ import MovieCard from "../components/MovieCard";
 import Bouton from "../components/Bouton";
 import LinearGradient from "react-native-linear-gradient";
 import Elilipse from "../components/Elilipse";
+import BoutonLarg from "../components/BoutonLarg";
+import ParagraphLast from "../components/ParagraphLast";
 
 const image = require('../assets/images/unsplash_UC0HZdUitWY.png');
+const blackfriday = require('../assets/images/blackfriday.png');
 
 const HomeScreen = () => {
     const [popularMovies, setMovies] = useState([]);
@@ -76,7 +79,7 @@ const HomeScreen = () => {
 
             <View style={styles.titreContainer}>
                 <Text style={styles.titre}>Marvel Studio</Text>
-                <Text style={styles.seeMore}>See more</Text>
+                <Text style={styles.seeMore}>See more </Text>
             </View>
             <FlatList
                 data={marvelMovies}
@@ -84,7 +87,13 @@ const HomeScreen = () => {
                     <MovieCard movie={item} />
                 )}
                 horizontal={true}
-            />  
+            /> 
+
+            <View style={styles.lastBlock}>
+                <Image source={blackfriday} style={styles.blackfridayStyle} />
+                <ParagraphLast />
+                <BoutonLarg text="Check Details" bgColor="#F2C94C" />
+            </View> 
         </ScrollView>
     )
 }
@@ -135,6 +144,16 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'row',
         marginTop: 20
+    },
+    lastBlock: {
+        flex: 1,
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginVertical: 20
+    },
+    blackfridayStyle: {
+        width: '90%'
     }
 })
 
