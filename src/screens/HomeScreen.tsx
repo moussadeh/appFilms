@@ -25,7 +25,7 @@ const HomeScreen = () => {
           setBestMovies(bestMovies);
 
           const marvelMovies = await getMarvelMovies();
-          setBestMovies(marvelMovies);
+          setMarvelMovies(marvelMovies);
         }
         fetchData();
     }, []);
@@ -70,18 +70,6 @@ const HomeScreen = () => {
             />
 
             <View style={styles.titreContainer}>
-                <Text style={styles.titre}>Best Movies</Text>
-                <Text style={styles.seeMore}>See more</Text>
-            </View>
-            <FlatList
-                data={bestMovies}
-                renderItem={({item}) => (
-                    <MovieCard movie={item} />
-                )}
-                horizontal={true}
-            />
-
-            <View style={styles.titreContainer}>
                 <Text style={styles.titre}>Marvel Studio</Text>
                 <Text style={styles.seeMore}>See more </Text>
             </View>
@@ -92,6 +80,18 @@ const HomeScreen = () => {
                 )}
                 horizontal={true}
             /> 
+
+            <View style={styles.titreContainer}>
+                <Text style={styles.titre}>Best Movies</Text>
+                <Text style={styles.seeMore}>See more</Text>
+            </View>
+            <FlatList
+                data={bestMovies}
+                renderItem={({item}) => (
+                    <MovieCard movie={item} />
+                )}
+                horizontal={true}
+            />
 
             <View style={styles.lastBlock}>
                 <Image source={blackfriday} style={styles.blackfridayStyle} />

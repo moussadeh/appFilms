@@ -39,7 +39,7 @@ export const getMarvelMovies = async () => {
     try {
         const response = await api.get('/discover/movie', {
             params: {
-                with_companies: 420, // ID Marvel Studios
+                with_companies: 420, // id marvel studios
             }
         });
         return response.data.results;
