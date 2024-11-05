@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, View } from "react-native";
+import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from "react-native";
 import { getBestMovies, getPopularMovies, getMarvelMovies } from "../api/TmdbApi";
 import MovieCard from "../components/MovieCard";
 import Bouton from "../components/Bouton";
@@ -29,9 +29,13 @@ const HomeScreen = () => {
         }
         fetchData();
     }, []);
+
+    // mode sombre
+    const theme = useColorScheme();
+    const isDark = theme == 'dark';
     
     return (
-        <ScrollView style={{backgroundColor: 'white'}}>
+        <ScrollView style={isDark ? {backgroundColor: '#333333'} : {backgroundColor: 'white'}}>
             <StatusBar translucent={true} backgroundColor='transparent' />
             <Image source={image} style={styles.imageStyle} />
             <View style={styles.buttonContainer}>
@@ -47,7 +51,7 @@ const HomeScreen = () => {
             </View>
 
             <LinearGradient 
-                colors={['#FFFFFF', 'transparent']}
+                colors={isDark ? ['#333333', 'transparent'] :  ['#FFFFFF', 'transparent']}
                 style={styles.gradiantContainer}
                 start={{ x: 0.5, y: 1 }}
                 end={{ x: 0.5, y: 0 }}
@@ -113,7 +117,6 @@ const styles = StyleSheet.create({
     titre: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: 'black',
         paddingHorizontal: 10
     },
     titreContainer: {

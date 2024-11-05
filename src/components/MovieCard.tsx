@@ -8,20 +8,21 @@ const MovieCard = ({ movie }: any) => {
                 style={styles.image}
                 source={{ uri: `https://image.tmdb.org/t/p/w500${movie.poster_path}`}}
             />
+            <Text>{movie.title}</Text>
         </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     card: {
-        alignItems: 'center',
-        marginBottom: 20
+        maxWidth: 130,
+        marginBottom: 20,
+        marginHorizontal: 5
     },
     image: {
         width: 130,
         height: 190,
-        borderRadius: 10,
-        marginHorizontal: 5
+        borderRadius: 10
     },
 });
 
