@@ -32,7 +32,7 @@ const HomeScreen = () => {
 
     // mode sombre
     const theme = useColorScheme();
-    const isDark = theme == 'dark';
+    const isDark = theme === 'dark';
     
     return (
         <ScrollView style={isDark ? {backgroundColor: 'black'} : {backgroundColor: 'white'}}>
@@ -58,7 +58,7 @@ const HomeScreen = () => {
             />
             
             <View style={styles.titreContainer}>
-                <Text style={styles.titre}>Popular Movies</Text>
+                <Text style={[styles.titre, {color: isDark ? 'white' : 'black'}]}>Popular Movies</Text>
                 <Text style={styles.seeMore}>See more</Text>
             </View>
             <FlatList
@@ -70,7 +70,7 @@ const HomeScreen = () => {
             />
 
             <View style={styles.titreContainer}>
-                <Text style={styles.titre}>Marvel Studio</Text>
+                <Text style={[styles.titre, {color: isDark ? 'white' : 'black'}]}>Marvel Studio</Text>
                 <Text style={styles.seeMore}>See more </Text>
             </View>
             <FlatList
@@ -82,13 +82,13 @@ const HomeScreen = () => {
             /> 
 
             <View style={styles.titreContainer}>
-                <Text style={styles.titre}>Best Movies</Text>
+                <Text style={[styles.titre, {color: isDark ? 'white' : 'black'}]}>Best Movies</Text>
                 <Text style={styles.seeMore}>See more</Text>
             </View>
             <FlatList
                 data={bestMovies}
                 renderItem={({item}) => (
-                    <MovieCard movie={item} />
+                    <MovieCard movie={item} textColor={isDark ? 'white' : 'black'} />
                 )}
                 horizontal={true}
             />
