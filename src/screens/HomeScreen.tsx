@@ -7,6 +7,7 @@ import LinearGradient from "react-native-linear-gradient";
 import Elilipse from "../components/Elilipse";
 import BoutonLarg from "../components/BoutonLarg";
 import ParagraphLast from "../components/ParagraphLast";
+import NavbarHaut from "../components/navigation/NavbarHaut";
 
 const image = require('../assets/images/unsplash_UC0HZdUitWY.png');
 const blackfriday = require('../assets/images/blackfriday.png');
@@ -38,6 +39,11 @@ const HomeScreen = () => {
         <ScrollView style={isDark ? {backgroundColor: 'black'} : {backgroundColor: 'white'}}>
             <StatusBar translucent={true} backgroundColor='transparent' />
             <Image source={image} style={styles.imageStyle} />
+            <NavbarHaut />
+            <View style={styles.textContainer}>
+                <Text style={{paddingHorizontal: 10, fontSize: 15}}>My List</Text>
+                <Text style={{paddingHorizontal: 10, fontSize: 15}}>Discover</Text>
+            </View>
             <View style={styles.buttonContainer}>
                 <Bouton text="WishList" bgColor="#333333" />
                 <Bouton text="Details" bgColor="#F2C94C" />
@@ -135,6 +141,14 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
+    },
+    textContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingVertical: 0,
+        marginTop: 0,
+        marginBottom: 10
     },
     gradiantContainer: {
         width: '100%',
