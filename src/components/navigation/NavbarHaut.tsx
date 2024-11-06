@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         borderRadius: 90,
         opacity: 100,
         height: 47,
-        width: '95%',
+        width: '100%',
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         color: 'black',
         borderRadius: 90,
-        padding: 10
+        padding: 10,
     }
 });
 
