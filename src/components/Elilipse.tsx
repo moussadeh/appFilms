@@ -1,8 +1,8 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-const Elilipse = () => {
-    return <View style={styles.circle} />
+const Elilipse = ({ isSelected } : any) => {
+    return <View style={[styles.circle, isSelected && { backgroundColor: '#F2C94C' }]} />
 }
 
 const styles = StyleSheet.create({

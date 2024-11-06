@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View } from "react-native";
+import { FlatList, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, useColorScheme, View } from "react-native";
 import { getBestMovies, getPopularMovies, getMarvelMovies } from "../api/TmdbApi";
 import MovieCard from "../components/MovieCard";
 import Bouton from "../components/Bouton";
@@ -16,6 +16,11 @@ const HomeScreen = () => {
     const [popularMovies, setMovies] = useState([]);
     const [bestMovies, setBestMovies] = useState([]);
     const [marvelMovies, setMarvelMovies] = useState([]);
+    const [selectedEllipse, setSelectedEllipse] = useState(null);
+
+    const handleEllipsePress = (index: any) => {
+        setSelectedEllipse(index);
+    };
 
     useEffect(() => {
         async function fetchData() {
@@ -49,11 +54,14 @@ const HomeScreen = () => {
                 <Bouton text="Details" bgColor="#F2C94C" />
             </View>
             <View style={styles.ellipseContainer}>
-                <Elilipse />
-                <Elilipse />
-                <Elilipse />
-                <Elilipse />
-                <Elilipse />
+                
+                {
+                    [0, 1, 2, 3, 4].map((index) => (
+                        <TouchableOpacity key={index} onPress={() => handleEllipsePress(index)}>
+                        <Elilipse isSelected={selectedEllipse === index} />
+                    </TouchableOpacity>
+                    ))
+                }
             </View>
 
             <LinearGradient 

@@ -10,11 +10,6 @@ const NavbarHaut = () => {
 
     return (
         <View style={styles.navContainer}>
-            {/*<Text style={styles.textStyle}>All</Text>
-            <Text style={styles.textStyle}>Romance</Text>
-            <Text style={styles.textStyle}>Sport</Text>
-            <Text style={styles.textStyle}>Kids</Text>
-            <Text style={styles.textStyle}>Horror</Text>*/}
             {
                 ["All", "Romance", "Sport", "Kids", "Horror"].map((item, index) => (
                     <TouchableOpacity key={index} onPress={() => handlePress(item)}>
