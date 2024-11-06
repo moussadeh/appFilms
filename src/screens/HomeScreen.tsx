@@ -54,12 +54,11 @@ const HomeScreen = () => {
                 <Bouton text="Details" bgColor="#F2C94C" />
             </View>
             <View style={styles.ellipseContainer}>
-                
                 {
                     [0, 1, 2, 3, 4].map((index) => (
                         <TouchableOpacity key={index} onPress={() => handleEllipsePress(index)}>
-                        <Elilipse isSelected={selectedEllipse === index} />
-                    </TouchableOpacity>
+                            <Elilipse isSelected={selectedEllipse === index} />
+                        </TouchableOpacity>
                     ))
                 }
             </View>
