@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 
 const NavbarHaut = () => {
-    const [selectedText, setSelectedText] = useState(null);
+    const [selectedText, setSelectedText] = useState("All");
 
     const handlePress = (text: any) => {
         setSelectedText(text);

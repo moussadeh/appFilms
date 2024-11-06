@@ -1,13 +1,18 @@
-import React from "react";
-import { StyleSheet, View, ImageBackground, Text, Image } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, View, Text, Switch } from "react-native";
 import stylesCommuns from "../assets/styles/stylesCommuns";
-
-const image = require('../assets/images/unsplash_UC0HZdUitWY.png');
+import { useTheme } from "@react-navigation/native";
 
 const ProfileScreen = () => {
+    const [isSwitchOn, setIsSwitchOn] = useState(false);
+    const { colors } = useTheme();
+
+    const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+
     return (
-        <View style={stylesCommuns.container}>
-            <Text>Profile</Text>
+        <View style={[stylesCommuns.container, { backgroundColor: colors.background }]}>
+            <Text style={{ color: colors.text }}>Acttiver / Désactiver Mode sombre</Text>
+            <Switch value={isSwitchOn} onValueChange={setIsSwitchOn} />
         </View>
     );
 }
@@ -16,15 +21,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        justifyContent: 'space-between',
     },
-    imageBackgroundStyl : {
-        width : '100%',
-        height: '80%'
-    },
-    linearGradiantStyle: {
-        height: 150,
-        width: "100%"
+    boutonStyle: {
+
     }
 });
 

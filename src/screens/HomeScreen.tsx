@@ -8,6 +8,7 @@ import Elilipse from "../components/Elilipse";
 import BoutonLarg from "../components/BoutonLarg";
 import ParagraphLast from "../components/ParagraphLast";
 import NavbarHaut from "../components/navigation/NavbarHaut";
+import { useTheme } from "@react-navigation/native";
 
 const image = require('../assets/images/unsplash_UC0HZdUitWY.png');
 const blackfriday = require('../assets/images/blackfriday.png');
@@ -16,7 +17,8 @@ const HomeScreen = () => {
     const [popularMovies, setMovies] = useState([]);
     const [bestMovies, setBestMovies] = useState([]);
     const [marvelMovies, setMarvelMovies] = useState([]);
-    const [selectedEllipse, setSelectedEllipse] = useState(null);
+    const [selectedEllipse, setSelectedEllipse] = useState(0);
+    const { colors } = useTheme();
 
     const handleEllipsePress = (index: any) => {
         setSelectedEllipse(index);
@@ -46,8 +48,8 @@ const HomeScreen = () => {
             <Image source={image} style={styles.imageStyle} />
             <NavbarHaut />
             <View style={styles.textContainer}>
-                <Text style={{paddingHorizontal: 10, fontSize: 15}}>My List</Text>
-                <Text style={{paddingHorizontal: 10, fontSize: 15}}>Discover</Text>
+                <Text style={{paddingHorizontal: 10, fontSize: 15, color: colors.text}}>My List</Text>
+                <Text style={{paddingHorizontal: 10, fontSize: 15, color: colors.text}}>Discover</Text>
             </View>
             <View style={styles.buttonContainer}>
                 <Bouton text="WishList" bgColor="#333333" />
@@ -71,44 +73,44 @@ const HomeScreen = () => {
             />
             
             <View style={styles.titreContainer}>
-                <Text style={[styles.titre, {color: isDark ? 'white' : 'black'}]}>Popular Movies</Text>
+                <Text style={[styles.titre, {color: colors.text}]}>Popular Movies</Text>
                 <Text style={styles.seeMore}>See more</Text>
             </View>
             <FlatList
                 data={popularMovies}
                 renderItem={({item}) => (
-                    <MovieCard movie={item} />
+                    <MovieCard movie={item} textColor={colors.text} />
                 )}
                 horizontal={true}
             />
 
             <View style={styles.titreContainer}>
-                <Text style={[styles.titre, {color: isDark ? 'white' : 'black'}]}>Marvel Studio</Text>
+                <Text style={[styles.titre, {color: colors.text}]}>Marvel Studio</Text>
                 <Text style={styles.seeMore}>See more </Text>
             </View>
             <FlatList
                 data={marvelMovies}
                 renderItem={({item}) => (
-                    <MovieCard movie={item} />
+                    <MovieCard movie={item} textColor={colors.text} />
                 )}
                 horizontal={true}
             /> 
 
             <View style={styles.titreContainer}>
-                <Text style={[styles.titre, {color: isDark ? 'white' : 'black'}]}>Best Movies</Text>
+                <Text style={[styles.titre, {color: colors.text}]}>Best Movies</Text>
                 <Text style={styles.seeMore}>See more</Text>
             </View>
             <FlatList
                 data={bestMovies}
                 renderItem={({item}) => (
-                    <MovieCard movie={item} textColor={isDark ? 'white' : 'black'} />
+                    <MovieCard movie={item} textColor={colors.text} />
                 )}
                 horizontal={true}
             />
 
             <View style={styles.lastBlock}>
                 <Image source={blackfriday} style={styles.blackfridayStyle} />
-                <ParagraphLast />
+                <ParagraphLast textColor={colors.text} />
                 <BoutonLarg text="Check Details" bgColor="#F2C94C" />
             </View> 
         </ScrollView>
