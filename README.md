@@ -18,6 +18,6 @@ appareil en dark => appli en dark
 et vice versa
 
 ## Self notation
-code / fichiers organisés
-maquette respectée
+code / fichiers organisés  
+maquette respectée  
 je donne un 15 à mon travail.
